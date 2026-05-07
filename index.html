@@ -1,95 +1,16 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enatable | القائمة الرقمية</title>
-    <link rel="stylesheet" href="styles.css" />
-</head>
-
-<body>
-    <header class="topbar">
-        <div>
-            <h1>Enatable</h1>
-            <p>القائمة الرقمية الذكية</p>
-        </div>
-        <button id="adminToggle" class="ghost">وضع الإدارة</button>
-    </header>
-
-    <main>
-        <section class="controls glass">
-            <input id="searchInput" type="search" placeholder="ابحث عن صنف..." />
-            <select id="categoryFilter">
-                <option value="">كل الأقسام</option>
-            </select>
-            <button id="resetBtn">إعادة ضبط</button>
-        </section>
-
-        <section class="qr-panel glass">
-            <h2>QR للوصول للقائمة</h2>
-            <div id="qrContainer"></div>
-            <p class="small">انسخ الرابط الحالي واطبعه في QR واحد داخل المطعم.</p>
-        </section>
-
-        <section id="menuGrid" class="menu-grid"></section>
-
-        <section id="adminPanel" class="admin-panel glass hidden">
-            <h2>إدارة عناصر القائمة</h2>
-            <form id="itemForm" class="form-grid">
-                <input name="name" placeholder="اسم الصنف" required />
-                <input name="category" placeholder="القسم" required />
-                <input name="price" type="number" min="0" placeholder="السعر" required />
-                <input name="rating" type="number" min="0" max="5" step="0.1" placeholder="تقييم السوشيال (0-5)"
-                    required />
-                <input name="photo" placeholder="رابط الصورة" required />
-                <button type="submit">إضافة صنف</button>
-            </form>
-
-            <div class="admin-actions">
-                <button id="exportBtn" class="ghost">تصدير JSON</button>
-                <label class="upload-btn">
-                    استيراد JSON
-                    <input id="importInput" type="file" accept="application/json" hidden />
-                </label>
-            </div>
-
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>الصنف</th>
-                            <th>القسم</th>
-                            <th>السعر</th>
-                            <th>التقييم</th>
-                            <th>تعديل</th>
-                            <th>حذف</th>
-                        </tr>
-                    </thead>
-                    <tbody id="adminRows"></tbody>
-                </table>
-            </div>
-        </section>
-    </main>
-
-    <template id="itemCardTemplate">
-        <article class="item-card glass">
-            <img alt="صورة الصنف" loading="lazy" />
-            <div class="item-content">
-                <h3></h3>
-                <p class="category"></p>
-                <p class="price"></p>
-                <p class="rating"></p>
-                <div class="likes">
-                    <button data-action="like">👍 <span>0</span></button>
-                    <button data-action="dislike">👎 <span>0</span></button>
-                </div>
-            </div>
-        </article>
-    </template>
-
-    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-    <script src="app.js" type="module"></script>
-</body>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Enatable | القائمة الرقمية - React Edition</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
